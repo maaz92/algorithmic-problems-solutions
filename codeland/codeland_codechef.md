@@ -271,7 +271,7 @@ class TarjansBridgesFinder {
 
 };
 ```
-![](tarjans_algo_dfs.mov)
+[See DFS Visualization Video](https://youtu.be/Men4lQiJUDo)
 
 Time Complexity is O(N+M) N is number of vertices and M is number of edges. You can find the details of the algorithm and it's implementation in the link https://cp-algorithms.com/graph/bridge-searching.html
 
