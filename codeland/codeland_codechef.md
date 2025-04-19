@@ -60,7 +60,7 @@ else : f(x, y) = 0
 
 #### After removing the edge (3,4) with weight 6, we have 2 connected components (1,2,3) and (4,5,6). Now we need to find an edge from one of the nodes in (1,2,3) to one of the nodes in (4,5,6) with the maximum weight. We find that the edge (6,3) is of maximum weight 30.
 
-#### Therefore maximum gain in strength = 30-24 =6
+#### Therefore maximum gain in strength = 30-6 =24
 
 ## 3. Breaking down the problem.
 #### 1. We need to find the weights of the graph.
