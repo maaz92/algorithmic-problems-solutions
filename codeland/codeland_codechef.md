@@ -90,12 +90,11 @@ int strength(int x, int y){
 }
 ```
 #### Time and Space Complexity of the above function
-```
-Time Complexity: O(3<sup>x</sup><sup>+</sup><sup>y</sup>)
-Because if we draw the recursion tree we will find 3<sup>x+y</sup> nodes in the tree.
-Space Complexity: O(3*(max(x,y)))
-Because there will be at most that 3*(max(x,y)) nodes in the recursion stack at a time.
-```
+#### Time Complexity: O(3<sup>x+y</sup>)
+#### Because if we draw the recursion tree we will find 3<sup>x+y</sup> nodes in the tree.
+#### Space Complexity: O(3*(max(x,y)))
+#### Because there will be at most that 3*(max(x,y)) nodes in the recursion stack at a time.
+
 #### Its exponential and undesirable. We can optimize it drastically by using memoization. 
 ```c++
 // Initialize the dp vector to store and lookup strength values
