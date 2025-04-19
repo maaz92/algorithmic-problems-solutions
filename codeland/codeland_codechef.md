@@ -155,7 +155,7 @@ int strength(int x, int y, vector<vector<int>>& dp){
 #### O(1) to answer any query
 #### O(n<sup>2</sup>) to precompute. Because we have 1 loop inside another both running n times.
 
-## 6. Find the list of edges of the graph such that if exactly 1 edge from that list is removed from the graph then the graph gets disconnected.
+## 6. Find the list of edges of the graph such that if any single edge from that list is removed from the graph then the graph gets disconnected.
 #### It turns out that this is a standard problem. This list of edges are called bridges of a graph.
 #### A bridge is an edge in an undirected graph which when removed disconnects the graph. i.e. If edge(u,v) is a bridge of a graph then there is only a single path between u and v and it's the edge (u,v).
 #### 1. Brute Force approach to find bridges of a connected graph is to loop through each edge(u,v), remove it and then run DFS from u. If you are not able to find v in the DFS then the edge(u,v) is a bridge otherwise it's not a bridge. Time Complexity O(M(N+M))
@@ -200,7 +200,7 @@ int strength(int x, int y, vector<vector<int>>& dp){
 Let's introduce a concept of backedge with some examples. If during DFS of a node U we find an edge from one of it's descendants back to U or any of its ancestors[apart from the edge taken in the DFS from U] then we call that edge a back edge. Let's see some examples.
 
 ![Graph2](codeland_sample4.svg)
-#### We will be running a simple DFS but we will be storing and using some more information to tell us whether there's a backedge to the current node (let's say U) from one of its descendants(the edge taken in the DFS from U).
+#### We will be running a simple DFS but we will be storing and using some more information to tell us whether there's a backedge to the current node(let's say U) or any of it's ancestors from one of its descendants(the edge taken in the DFS from U).
 #### We will be using a counter in the DFS. Each time we are running DFS for an unvisited node, we increment that counter. Let's call that counter *timer*. This counter will help us determine the order of discovery of nodes in the DFS.
 #### Let's define an array tin[]. tin\[v\] will store the time in which DFS was run for v or the discovery time of v.
 #### Let's define an array low[]. low\[v\] will store the minimum discovery time of(all the nodes in the subtree of v or adjacent to any of the nodes in the subtree of v) in the DFS. The values in this array will help us determine if there exists a back edge from any of the nodes in the subtree of v or adjacent to any of the nodes in the subtree of v to v or any of its ancestors.
